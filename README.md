@@ -1,7 +1,7 @@
 # diancan-management-ui
 diancan backend management ui, base on angular4
 
-点餐后天管理UI 界面，基于Angular4
+点餐后管理UI 界面，基于Angular4
 
 1)Dashboard ,放一些常用功能
 2)菜单
