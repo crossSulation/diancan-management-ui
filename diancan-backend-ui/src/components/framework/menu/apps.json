@@ -1,0 +1,20 @@
+{
+    "apps": [
+        {
+            "id": "dashboard",
+            "url": "#/dashboard",
+            "title": "dashboard",
+            "isShow": true,
+            "order":"a",
+            "permissions": {}
+        },
+        {
+            "id": "dashboard",
+            "url": "#/dashboard",
+            "title": "dashboard",
+            "isShow": true,
+            "order":"b",
+            "permissions": {}
+        }
+    ]
+}

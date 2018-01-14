@@ -1,0 +1,22 @@
+{
+    "items": [
+        {
+            "id": 1,
+            "name": "settings",
+            "desc": "settings",
+            "icon": ""
+        },
+        {
+            "id": 2,
+            "name": "profile",
+            "desc": "profile",
+            "icon": ""
+        },
+        {
+            "id": 3,
+            "name": "loginout",
+            "desc": "login out",
+            "icon": ""
+        }
+    ]
+}
