@@ -4,9 +4,9 @@
   <el-dropdown class="profile" @select="handleSelect">
      <span> {{username}}<i class="el-icon-arrow-down el-icon--right"></i></span>
     <el-dropdown-menu slot="dropdown">
-        <el-dropdown-item>设置</el-dropdown-item>
-        <el-dropdown-item>消息中心<el-badge class="mark" :value="3" /></el-dropdown-item>
-        <el-dropdown-item>登出</el-dropdown-item>
+        <el-dropdown-item><router-link to="/home/configs"><icon name="cog"></icon>设置</router-link></el-dropdown-item>
+        <el-dropdown-item><router-link to="/home/message"><icon name="comments"></icon>消息中心<el-badge class="mark" :value="3" /></router-link></el-dropdown-item>
+        <el-dropdown-item><router-link to="/login"><icon name="sign-out"></icon>登出</router-link></el-dropdown-item>
     </el-dropdown-menu>
     </el-dropdown>
     <img class="profile-img"/>

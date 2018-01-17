@@ -47,7 +47,7 @@ export default {
 }
 .el-content{
   margin-left:201px;
-  min-height: 900px;
+  min-height: 1200px;
 }
 .el-header, .el-footer {
     color: #B3C0D1;

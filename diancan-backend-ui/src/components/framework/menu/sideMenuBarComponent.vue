@@ -24,6 +24,12 @@
           </div>
           <span slot="title">图表</span>
         </el-menu-item>
+        <el-menu-item class="menu-item" index="/home/messages">
+          <div>
+            <icon name="comments" scale="2"></icon>
+          </div>
+          <span slot="title">消息管理</span>
+        </el-menu-item>
         <el-menu-item class="menu-item" index="/home/users">
           <div>
             <icon name="users" scale="2"></icon>

@@ -9,6 +9,7 @@ import MEchart from '../components/echart/echarts.vue'
 import NotFound from '../components/NotFound/notfound.vue'
 import Users from '../components/users/usersmanagement.vue'
 import RestaurantAddr from '../components/restaurantaddrmanagement/restaurantaddrmanagement.vue'
+import MessageCenter from '../components/message/messagemanagement.vue'
 import Api from '../restapi';
 
 Vue.use(Router);
@@ -47,6 +48,9 @@ const routes = [
             },
             {
                 path: 'configs', component: Configs, name: 'configs'
+            },
+            {
+                path: 'messages', component: MessageCenter, name: 'messages'
             }
         ]
     },
