@@ -1,29 +1,40 @@
 <template>
-      <el-menu default-active="1-4-1" class="el-menu-vertical-container" @open="handleOpen" @close="handleClose" :collapse="isCollapse">
-        <el-submenu index="1">
-          <template slot="title">
-            <i class="el-icon-menu"></i>
-            <span slot="title">Dashboard</span>
-          </template>
-          <el-menu-item-group>
-            <span slot="title">分组一</span>
-            <el-menu-item index="1-1">选项1</el-menu-item>
-            <el-menu-item index="1-2">选项2</el-menu-item>
-          </el-menu-item-group>
-          <el-menu-item-group title="分组2">
-            <el-menu-item index="1-3">选项3</el-menu-item>
-          </el-menu-item-group>
-          <el-submenu index="1-4">
-            <span slot="title">选项4</span>
-            <el-menu-item index="1-4-1">选项1</el-menu-item>
-          </el-submenu>
-        </el-submenu>
-        <el-menu-item index="2">
-          <i class="el-icon-menu"></i>
-          <span slot="title">餐厅管理</span>
+      <el-menu default-active="/home/dashboard" class="el-menu-vertical-container" @open="handleOpen" @close="handleClose" :collapse="isCollapse" :router="true">
+        <el-menu-item class="menu-item" index="/home/dashboard">
+          <div>
+          <icon name="dashboard" scale="2"></icon>
+          </div>
+          <span slot="title">Dashboard</span>
         </el-menu-item>
-        <el-menu-item index="3">
-          <i class="el-icon-setting"></i>
+        <el-menu-item  class="menu-item" index="/home/restaurantmanagement">
+        <div>
+          <icon name="hotel" scale="2"></icon>
+        </div>
+          <span  slot="title">餐厅管理</span>
+        </el-menu-item>
+        <el-menu-item  class="menu-item" index="/home/restaurantmanagementaddr">
+        <div>
+          <icon name="location-arrow" scale="2"></icon>
+        </div>
+          <span  slot="title">餐址管理</span>
+        </el-menu-item>
+        <el-menu-item class="menu-item" index="/home/echart">
+          <div>
+            <icon name="pie-chart" scale="2"></icon>
+          </div>
+          <span slot="title">图表</span>
+        </el-menu-item>
+        <el-menu-item class="menu-item" index="/home/users">
+          <div>
+            <icon name="users" scale="2"></icon>
+          </div>
+          <span slot="title">用户管理</span>
+        </el-menu-item>
+        <el-menu-item  class="menu-item" index="/home/configs">
+          <div>
+            <icon name="cogs" scale="2">
+            </icon>
+          </div>
           <span slot="title">设置</span>
         </el-menu-item>
       </el-menu>
@@ -35,7 +46,7 @@ export default {
   name: "side-menu-bar",
   data() {
     return {
-      isCollapse:false
+      isCollapse: false
     };
   },
   created() {
@@ -53,19 +64,25 @@ export default {
           console.log(eror);
         });
     },
-    handleOpen:function() {
-
-    },
-    handleClose:function() {
-
-    }
+    handleOpen: function() {},
+    handleClose: function() {}
   }
 };
 </script>
 
 <style lang="scss">
-  .el-menu-vertical-container:not(.el-menu--collapse) {
-    min-height: 700px;
-  }
+.el-menu-vertical-container:not(.el-menu--collapse) {
+  min-height: 900px;
+}
+.el-menu {
+  border-right: transparent;
+  text-align: center;
+  margin-left: 10px;
+}
+.menu-item {
+  text-align: center;
+  height: 120px;
+  margin-bottom: 50px;
+}
 </style>
 

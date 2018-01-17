@@ -1,21 +1,17 @@
 <template>
- <div>
-    <el-container class="container">
-    <el-aside>
+ <div class="container">
+       <header class="el-header">
+        <topbar></topbar>
+      </header>
+      <aside class="el-aside">
       <side-menu-bar></side-menu-bar>
-    </el-aside>
-    <el-container>
-        <el-header>
-          <topbar></topbar>
-        </el-header>
-        <el-main>
-          <router-view></router-view>
-        </el-main>
-        <el-footer>
-          <footerbar></footerbar>
-        </el-footer>
-    </el-container>
-  </el-container>
+    </aside>
+    <main class="el-content">
+      <router-view></router-view>
+    </main>
+     <footer class="el-footer">
+        <footerbar></footerbar>
+    </footer>
  </div>
 </template>
 
@@ -40,17 +36,25 @@ export default {
 
 <style lang="scss" scoped>
 .container {
-  margin: 20px;
+  margin-top: 20px;
   width: 80%;
   border: 1px solid #eee;
-  margin-left: auto;
-  margin-right: auto;
+  box-shadow: #B3C0D1;
+  position:absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow:0 0 25px #cac6c6;
+}
+.el-content{
+  margin-left:201px;
+  min-height: 900px;
 }
 .el-header, .el-footer {
     color: #B3C0D1;
     text-align: center;
     line-height: 60px;
     padding:0;
+    height: 60px;
   }
   .el-footer {
     line-height: 10px;
@@ -60,6 +64,8 @@ export default {
     color: #333;
     text-align: left;
     line-height: 200px;
+    width: 200px;
+    float: left;
   }
   
   .el-main {
@@ -73,12 +79,4 @@ export default {
     margin-bottom: 40px;
   }
   
-  .el-container:nth-child(5) .el-aside,
-  .el-container:nth-child(6) .el-aside {
-    line-height: 260px;
-  }
-  
-  .el-container:nth-child(7) .el-aside {
-    line-height: 320px;
-  }
 </style>

@@ -1,21 +1,21 @@
 <template>
     <div id="dashboard">
-      
+      {{pageinfo}}
     </div>
 </template>
 <script>
 export default {
    name:"dashboard",
    data() {
-    
+      return {
+        pageinfo:'this is dashboard page'
+      }
    }
 }
 </script>
 
 <style lang="scss">
   #dashboard {
-     width: 500px;
-     height: 600px;
-     border: 1px solid gray;
+    
   }
 </style>

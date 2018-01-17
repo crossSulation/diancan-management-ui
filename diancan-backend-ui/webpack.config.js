@@ -1,6 +1,5 @@
 var path = require('path')
 var webpack = require('webpack')
-
 module.exports = {
   entry: './src/main.js',
   output: {
@@ -63,7 +62,8 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        exclude: /node_modules/
+        exclude: /node_modules/,
+        include:[path.resolve(__dirname,'src'),path.resolve(__dirname,'node_modules/vue-awesome')]
       },
       {
         test: /\.(png|jpg|gif|svg|eot|woff|ttf)$/,

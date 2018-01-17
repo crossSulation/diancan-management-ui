@@ -3,7 +3,12 @@ import Router from 'vue-router'
 import Login from '../components/login/loginComponent.vue'
 import Home from '../components/framework/homeComponent.vue'
 import Dashboard from '../components/framework/dashboard/dashboardComponent.vue'
-import App from '../App.vue'
+import Restaurant from '../components/restaurantmanagement/restaurantmanagement.vue'
+import Configs from '../components/configs/configs.vue'
+import MEchart from '../components/echart/echarts.vue'
+import NotFound from '../components/NotFound/notfound.vue'
+import Users from '../components/users/usersmanagement.vue'
+import RestaurantAddr from '../components/restaurantaddrmanagement/restaurantaddrmanagement.vue'
 import Api from '../restapi';
 
 Vue.use(Router);
@@ -11,23 +16,47 @@ Vue.prototype.$api = Api;
 
 const routes = [
     {
-        path: '/',
-        component: App,
+        path: '/login',
+        component: Login,
+        name: 'login'
+    },
+    {
+        path: '404',
+        component: NotFound,
+        name: 'notfound'
+    },
+    {
+        path:'/home',
+        component:Home,
+        name:'home',
         children: [
-            {
-                path: 'login',
-                component: Login
+            { 
+                path: 'dashboard', component: Dashboard, name: 'dashboard', hidden: true 
             },
             {
-                path: 'home',
-                component: Home,
-                children: [
-                    { path: 'dashboard', component: Dashboard }
-                ]
+                path: 'restaurantmanagement', component: Restaurant, name: 'restaurant'
+            },
+            {
+                path: 'restaurantmanagementaddr', component: RestaurantAddr, name: 'restaurantaddr'
+            },
+            {
+                path: 'users', component: Users, name: 'users'
+            },
+            {
+               path:'echart',component: MEchart , name:'echart'
+            },
+            {
+                path: 'configs', component: Configs, name: 'configs'
             }
         ]
+    },
+    {
+        path: '/',
+        component: Home
     }
+
 ];
 export default new Router({
+    mode:'history',
     routes: routes
 });

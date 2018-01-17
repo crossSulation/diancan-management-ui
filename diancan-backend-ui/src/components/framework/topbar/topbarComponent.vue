@@ -1,51 +1,67 @@
 <template>
   <div id="topbar">
-  <el-menu :default-active="activeIndex" class="profile" mode="horizontal" @select="handleSelect">
-    <el-submenu index="1">
-        <template slot="title">
-            <span>{{username}}</span>
-            <div class="profile-img"></div>
-        </template>
-        <el-menu-item index="2-1">选项1</el-menu-item>
-        <el-menu-item index="2-2">选项2</el-menu-item>
-        <el-menu-item index="2-3">选项3</el-menu-item>
-    </el-submenu>
-</el-menu>
+  <span class="profile-logo">点餐后台管理系统</span>
+  <el-dropdown class="profile" @select="handleSelect">
+     <span> {{username}}<i class="el-icon-arrow-down el-icon--right"></i></span>
+    <el-dropdown-menu slot="dropdown">
+        <el-dropdown-item>设置</el-dropdown-item>
+        <el-dropdown-item>消息中心<el-badge class="mark" :value="3" /></el-dropdown-item>
+        <el-dropdown-item>登出</el-dropdown-item>
+    </el-dropdown-menu>
+    </el-dropdown>
+    <img class="profile-img"/>
+    <el-input class="topbar-search"  prefix-icon="el-icon-search" placeholder="搜索"/>
   </div>
 </template>
 
 <script>
 export default {
-    data() {
-      return {
-        activeIndex: '1',
-        activeIndex2: '1',
-        username:'laxliu'
-      };
+  name:'topbar',
+  data() {
+    return {
+      activeIndex: "1",
+      activeIndex2: "1",
+      username: "laxliu"
+    };
+  },
+  methods: {
+    handleSelect(key, keyPath) {
+      console.log(key, keyPath);
     },
-    methods: {
-      handleSelect(key, keyPath) {
-        console.log(key, keyPath);
-      }
+    hiddenMenu(key,keypath) {
+      console.log(key,keypath);
     }
-}
+  }
+};
 </script>
 
 <style lang="scss" scoped>
-    #topbar {
+#topbar {
+  width: 100%;
+  .profile {
+    float: right;
+    margin-right: 40px;
+  }
+  .topbar-search {
+      width: 200px;
+      float: right;
+      margin-right: 40px;
+  }
+   span {
         height: 60px;
-        width: 100%;
-        .profile {
-            float: right;
-            width: 150px;
-        }
     }
-    .profile-img {
-        border-radius: 50%;
-        width: 50px;
-        height: 50px;
-        float: right;
-        border: 1px solid gainsboro;
-        margin-top: 5px;
-    }
+}
+.profile-img {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  border: 1px solid gainsboro;
+  margin-top: 5px;
+  margin-right: 10px;
+  float: right;
+}
+.profile-logo {
+  float: left;
+  width: 200px;
+}
 </style>
