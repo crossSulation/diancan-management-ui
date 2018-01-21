@@ -10,6 +10,10 @@ import 'vue-awesome/icons'
 
 import Icon from 'vue-awesome/components/Icon.vue'
 
+import appconfig from './configs'
+
+Vue.prototype.$appconfigs =appconfig;
+
 Vue.component('icon',Icon)
 
 Vue.use(ElementUI)
