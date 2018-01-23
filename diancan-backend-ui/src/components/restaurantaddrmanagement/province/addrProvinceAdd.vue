@@ -41,7 +41,7 @@ export default {
              desccn:'',
              descen:''
          },
-         formLabelWidth:'180px'
+         formLabelWidth:'100px'
      }
  },
  methods:{
